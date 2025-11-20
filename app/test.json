@@ -1,0 +1,10 @@
+{
+    "pgm_name": "ZTEST_RULE2768887_COMBINED",
+    "inc_name": "ZTEST_RULE2768887_COMB_INC",
+    "type": "PROG",
+    "name": "MAIN_BLOCK",
+    "class_implementation": "",
+    "start_line": 5,
+    "end_line": 200,
+    "code": "DATA lt_vbrk TYPE TABLE OF vbrk.\nDATA lt_vbrp TYPE TABLE OF vbrp.\nDATA lt_join TYPE TABLE OF vbrp.\nDATA lt_join_ok TYPE TABLE OF vbrp.\nDATA lt_mara TYPE TABLE OF mara.\nSELECT * FROM vbrk INTO TABLE lt_vbrk.\nSELECT * FROM vbrp INTO TABLE lt_vbrp WHERE vbrp~vbtyp = 'M'.\nSELECT * FROM vbrk AS b INNER JOIN vbrp AS p ON b~vbeln = p~vbeln INTO TABLE lt_join.\nSELECT * FROM vbrk AS b INNER JOIN vbrp AS p ON b~vbeln = p~vbeln WHERE b~draft = space AND p~draft = space INTO TABLE lt_join_ok.\nSELECT * FROM mara INTO TABLE lt_mara.\n"
+}
